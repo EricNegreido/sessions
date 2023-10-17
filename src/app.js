@@ -6,6 +6,10 @@ import mongoose from 'mongoose';
 import handlebars from 'express-handlebars'
 import viewsRouter from './routes/views.router.js';
 import sessionsRouter from './routes/sessions.router.js';
+import cartsRouter from './routes/carts.router.js';
+import productsRouter from './routes/products.router.js';
+
+
 
 const app = express();
 
@@ -39,5 +43,7 @@ app.use(session({
 
 app.use('/', viewsRouter);
 app.use('/api/sessions', sessionsRouter);
+app.use('/api/carts', cartsRouter);
+app.use('/api/products', productsRouter);
 
 app.listen(8080, () => console.log('server running'));
